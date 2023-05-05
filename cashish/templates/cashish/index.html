@@ -1,0 +1,47 @@
+{% extends "cashish/layout.html" %} {% load static %}{% block body %}
+
+{% if user.is_authenticated %}
+
+
+    <div id="editable" class="title">
+    Expences
+    </div>
+
+    <div id="all-expenses">
+
+    </div>
+
+
+<div id="editable2" class="title">
+    Total Expence
+</div>
+
+<div id="total-expense">
+    
+</div>
+
+<hr class="line">
+
+<div id="editable3" class="chart-des">
+    Expence By Type
+    <canvas id="doughnut-chart" width="800" height="350"></canvas>
+</div>
+
+{% else %}
+<div class="title">
+    <p>
+        This App lets You track your Expences !! 
+        Wanna 
+        <a href="{% url 'register' %}"> Register</a>??
+
+    </p>
+    
+    
+
+</div>
+
+{% endif %}
+
+{% endblock %} {% block script %}
+<!-- Add JS -->
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "cashish/layout.html" %} {% load static %}{% block body %}
+
+<div class="title" style="font-size:large;">Add your Expences here </div>
+
+<br>
+
+<form class="form-des" action="{% url 'addexp' request.user %}" method="post"">
+    {% csrf_token %}
+    <div>Name of Expence </div>
+    <textarea name="name-exp" id="" cols="50" rows="0"></textarea>
+    <div>Amount of Expence</div>
+    <input type="number" name="amount-exp" id="" cols="10" rows="0"></input>
+    <div>Type of Expence</div>
+    <textarea name="type-exp" id="" cols="30" rows="0"  type="text"></textarea>
+    <br>
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+
+
+{% endblock %} {% block script %}
+<!-- Add JS -->
+{% endblock %}
